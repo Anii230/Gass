@@ -1,9 +1,3 @@
-# React + Vite
+# GASS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# Gass
+Gass is a social media website designed to connect people and foster communication in a modern, engaging platform. Built with React, Node.js, Express, and MySQL, Gass aims to provide a seamless user experience with features like real-time messaging, profile customization, and content sharing.
