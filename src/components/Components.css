@@ -10,7 +10,7 @@
     justify-content: space-between;
     background-color: transparent;
     color: white;
-    box-shadow: inset 0 0 10px #000;
+    box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.3);
     padding: 0 1rem;
 }
 
@@ -44,7 +44,7 @@
     border: 1px solid white;
     border-radius: 10px;
     font-weight: 400;
-    transition: .3s;
+    transition: .4s;
     background-color: #12121c;
     color: white;
 }
@@ -53,10 +53,20 @@
     background-color: white;
     border-color: white;
     color: black;
+    font-weight: 700;
 }
 
 
 /* Hero */
 body{
     background-color: #12121c;
+}
+
+/* About */
+.about-container{
+    transform-origin: center;
+    color: white;
+    margin: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
 }
