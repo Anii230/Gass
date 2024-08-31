@@ -8,9 +8,9 @@
 .navbar{
     display: flex;
     justify-content: space-between;
-    background-color: transparent;
+    background-color: #12121c;
     color: white;
-    box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.3);
+    box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.7);
     padding: 0 1rem;
 }
 
@@ -58,15 +58,54 @@
 
 
 /* Hero */
-body{
-    background-color: #12121c;
-}
+
 
 /* About */
 .about-container{
     transform-origin: center;
+    background-color: #0f0f15;
     color: white;
     margin: 1rem;
     padding: 1rem;
     font-size: 2rem;
+}
+
+/* Home */
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-color: #0f0f15;
+    padding: 20px;
+}
+
+.home-title {
+    font-size: 3rem;
+    color: #980dc2;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.home-tagline {
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin-bottom: 40px;
+}
+
+.home-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.home-button:hover {
+    background-color: #0056b3;
 }

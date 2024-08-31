@@ -35,9 +35,9 @@ const Navbar = () => {
             </div>
             <div className="nav-other">
                 <ul>
-                    <li><Link to="/About">About</Link></li>
+                    <li><Link to="/Home">Home</Link></li>
                     <li><a href="#">Privacy</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><Link to="/About">About</Link></li>
                     <li><a href="#"><button>Login</button></a></li>
                     <li><a href="#"><button>Signup</button></a></li>
                 </ul>
