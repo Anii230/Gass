@@ -1,0 +1,135 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Zoom Animation</title>
+    <link rel="stylesheet" href="styles.css" />
+
+<style>
+    /* styles.css */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+}
+
+header {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('your-background-image.jpg') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+header .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+header h1 {
+  position: relative;
+  font-size: 4rem;
+  margin: 0;
+  z-index: 10;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0 0;
+}
+
+nav li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+section {
+  padding: 50px;
+  position: relative;
+  background: #f4f4f4;
+}
+
+section:nth-of-type(odd) {
+  background: #eaeaea;
+}
+
+section h2 {
+  margin-top: 0;
+}
+
+.border-animation {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid black;
+  z-index: 5;
+  pointer-events: none;
+  transform: scale(0);
+}
+
+</style>
+</head>
+
+<body>
+    <header id="hero">
+        <div class="overlay"></div>
+        <h1 id="title">Welcome to My Site</h1>
+        <nav>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <div class="border-animation"></div>
+        <p>Content about me...</p>
+      </section>
+
+      <section id="services">
+        <h2>Services</h2>
+        <div class="border-animation"></div>
+        <p>Details of services...</p>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="border-animation"></div>
+        <p>Contact details...</p>
+      </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="p2.js"></script>
+</body>
+
+</html>

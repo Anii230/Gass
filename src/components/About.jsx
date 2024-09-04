@@ -15,9 +15,11 @@ const About = () => {
     })
     return (
         <>
+        <body className="abt-body">
             <div className="about-container">
                 This is the about page!!
             </div>
+        </body>
         </>
     )
 }
