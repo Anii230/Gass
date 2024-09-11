@@ -1,9 +1,19 @@
-/* Navbar */
+/* global css for all the component pages */
+
 *{
     margin: 0;
     padding: 0;
     font-family: Verdana;
+    box-sizing: border-box;
+    scrollbar-width: none;
 }
+
+/* For chromium based browsers */
+::-webkit-scrollbar{
+    display: none;
+}
+
+/* Navbar */
 
 .navbar{
     position: fixed;
@@ -12,7 +22,8 @@
     right: 0;
     display: flex;
     justify-content: space-between;
-    background-color: #12121c;
+    /* background-color: #12121c; */
+    /* background-color: transparent; */
     color: white;
     box-shadow: 10px 10px 15px 5px rgba(0,0,0,0.7);
     box-sizing: border-box;
@@ -21,9 +32,11 @@
 }
 
 .nav-logo a{
+    /* font-size: 1.4rem; */
     color: white;
     font-weight: 900;
     text-decoration: none;
+    font-family: monoton;
 }
 
 .nav-logo, .nav-other ul li{
@@ -44,7 +57,7 @@
 }
 
 .nav-other ul li button{
-    width: 5rem;
+    width: 7rem;
     padding: .4rem;
     cursor: pointer;
     border: 1px solid white;
@@ -65,20 +78,35 @@
 /* About */
 .abt-body{
     height: 100vh;
-    width: 100vw;
+    width: 100%;
+    padding: 5rem 1rem;
     box-sizing: border-box;
     background-color: #0f0f15;
 }
 
 .about-container{
+
     transform-origin: center;
     color: white;
     font-size: 2rem;
     padding: 2rem;
 }
 
+/* Hero */
+*{
+    background-color: #0f0f15;
+}
+
 /* Home */
-.home-container {
+
+.home-div{
+    height: 100%;
+    width: 100%;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.home-svg {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -90,47 +118,9 @@
     padding: 20px;
 }
 
-.home-title {
-    font-family: monoton;
-    font-size: 15rem;
-    color: #fff;
-    margin-bottom: 20px;
-    font-weight: bold;
-}
-
-.home-tagline {
-    font-size: 1.5rem;
-    color: #ffffff;
-    margin-bottom: 40px;
-}
-
-.home-button {
-    padding: 15px 30px;
-    font-size: 1.2rem;
-    color: #fff;
-    background-color: #007BFF;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.home-button:hover {
-    background-color: #0056b3;
-}
-
-.next-comp{
-    background-color: #0f0f15;
-    height: 100vh;
-    width: 100vw;
-    box-sizing: border-box;
-    color: white;
-}
-
 #logo{
     animation:fill 0.5s ease forwards 2.5s;
 }
-
 
 
 #logo > path:nth-child(1){
@@ -168,5 +158,108 @@
     }
     to{
         fill: white;
+    }
+}
+
+.next-comp{
+    background-color: #0f0f15;
+    height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+    color: white;
+}
+
+.next-comp h2{
+    font-weight: 200;
+    text-align: center;
+    font-size: 3rem;
+    padding: 8rem;
+}
+
+.home-grid{
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #0f0f15;
+    height: 100vh;
+    width: 100%;
+    gap: 2rem;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* .home-grid div {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+} */
+
+.G, .A, .S1, .S2{
+    color: white;
+    background-color: transparent;
+    padding: 2rem;
+    box-sizing: border-box;
+    height: 22rem;
+    width: 18rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.G h3, .A h3, .S1 h3, .S2 h3{
+    color: red;
+    margin-bottom: auto;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+.G p, .A p, .S1 p, .S2 p{
+    text-align: center;
+    color: #fff;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+
+.scroll-rev{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: #0f0f15;
+    box-sizing: border-box;
+    font-size: 2vw;
+    color: white;
+    padding: 5rem;
+    /* margin: 5rem; */
+}
+
+.scroll-rev h1{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.scroll-rev h2{
+    text-align: center;
+    /* font-size: 3rem; */
+    padding: 1rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 600;
+}
+
+.scroll-rev span{
+    color: hsl(0 0% 100% / 0.2);
+    background-clip: text;
+    background-repeat: no-repeat;
+    background-size: 0% 100%;
+    background-image: linear-gradient(90deg, red, blue);
+    /* animation: scroll-rev linear forwards;
+    animation-timeline: view(); */
+}
+
+@keyframes scroll-rev{
+    to {
+        background-size: 100% 100%;
     }
 }
