@@ -3,6 +3,7 @@ import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import useLenis from '../hooks/useLenis'
+import Lottie from './Lottie.jsx'
 import "./Components.css"
 
 gsap.registerPlugin(useGSAP);
@@ -10,7 +11,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 
 const Home = () => {
-    // useLenis()
+    useLenis()
 
     useGSAP(()=>{
 
@@ -22,7 +23,7 @@ const Home = () => {
                 // pinSpacing:false,
                 pinSpacer:false,
                 trigger:".home-grid",
-                start:"top 30%",
+                start:"top 5%",
                 end:"bottom 50%",
             }
         })
@@ -30,24 +31,36 @@ const Home = () => {
             y:500,
             opacity:0,
             duration:0.5,
-            ease:"power4.inOut",
+            // delay:2,
+            ease:"power2.inOut",
             stagger:0.1,
             scrub:1
         })
 
-        gsap.to(".scroll-rev span", {
+        // gsap.to(".scroll-rev span", {
+        //     scrollTrigger: {
+        //         trigger: ".scroll-rev",
+        //         start: "top 50%",
+        //         end: "top 10%",
+        //         scrub: true,
+        //         stagger:true
+        //     },
+        //     backgroundSize: "100% 100%",
+        //     ease: "none",
+        //     duration:4
+        // });
+
+        gsap.to(".gass-head h1", {
             scrollTrigger: {
-                trigger: ".scroll-rev",
-                start: "top 50%",
-                end: "top 20%",
+                trigger: ".part-1",
+                start: "top 80%",
+                end: "bottom top",
                 scrub: true,
-                markers: true, // optional for debugging
-                stagger:true
             },
-            backgroundSize: "100% 100%",
-            ease: "none",
-            duration:4
-        });
+            y: "0%",
+            ease: "power2.out",
+        })
+
     })
 
     return (
@@ -83,8 +96,35 @@ const Home = () => {
             </div>
         </div>
         <div className="scroll-rev">
-                <h1 className='gass-head'><span>Introducing GASS</span></h1>
-                <h2 className='reveal-type'><span>"Gather ideas, amplify voices, and share your story—where every moment finds its place, and socializing becomes a vibrant connection. Welcome to a community built for you."</span></h2>
+                {/* <h1 className='gass-head'><span>Introducing GASS</span></h1>
+                <h2 className='reveal-type'><span className='scroll-span'>Gather ideas, amplify voices, and share your story! where moments matter, and connections thrive. Welcome to your community.</span></h2> */}
+
+                <div className="home-sec3">
+                    <div className="part-1">
+                        <h1 className='gass-head'>Introducing, <span className='hg-head'>GASS</span></h1>
+                        <p><span className='gass-abbrev'>Gather</span> ideas, <span className='gass-abbrev'>Amplify</span> voices, and <span className='gass-abbrev'>Share</span> your story—where every moment finds its place, and <span className='gass-abbrev'>socializing</span> becomes a vibrant connection. Welcome to a community built for you.</p>
+                        <button>Get Started Now</button>
+                    </div>
+                    <div className="part-2">
+                        {/* <img src="src/components/centerpart2.png" alt="" /> */}
+                        <Lottie></Lottie>
+                    </div>
+                </div>
+
+                <div className="home-sec4">
+                    <div className="services">
+                        <h3>Services</h3>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Temporibus inventore adipisci voluptates est iusto ea vel ipsa pariatur repudiandae officia!</p>
+                    </div>
+                    <div className="sec4-container">
+                        <div className="elem">
+
+                        </div>
+                        <div className="elem"></div>
+                        <div className="elem"></div>
+                        <div className="elem"></div>
+                    </div>
+                </div>
             </div>
     </div>
     </>

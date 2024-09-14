@@ -1,27 +1,20 @@
 import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import transition from '../transition'
 import "./Components.css"
 
-gsap.registerPlugin(useGSAP);
 
 const About = () => {
-    const abt = useRef();
-    useGSAP(()=>{
-        gsap.fromTo(".about-container",
-            {scale:0},
-            {scale:1, duration:1}
-        )
-    })
     return (
         <>
-        <body className="abt-body">
-            <div className="about-container">
-                This is the about page!!
+        <div className="abt-page">
+            <div className="abt-head">
+                <h1>About us</h1>
             </div>
-        </body>
+        </div>
         </>
     )
 }
 
-export default About
+export default transition(About)

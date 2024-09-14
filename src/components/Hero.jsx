@@ -3,7 +3,9 @@ import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom"
 import Navbar from './Navbar'
 import Home from './Home'
 import About from './About'
+import Auth from './Auth'
 import './Components.css'
+import { AnimatePresence } from 'framer-motion'
 
 const Layout = () => {
     return (
@@ -22,6 +24,8 @@ const router = createBrowserRouter([
             { path: "/", element: <Home /> },
             { path: "Home", element: <Home /> },
             { path: "About", element: <About /> },
+            { path: "About", element: <About /> },
+            { path: "Auth", element: <Auth /> },
         ]
     }
 ])
@@ -29,6 +33,7 @@ const router = createBrowserRouter([
 const Hero = () => {
     return (
         <>
+
             <RouterProvider router={router} />
         </>
     )

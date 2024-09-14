@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        button {
+            cursor: pointer;
+            padding: 8px 16px;
+            margin: 10px 5px;
+        }
+
+        body {
+            display: flex;
+            position: relative;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 300vh;
+        }
+
+        .box-container {
+            top: 50vh;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex: 1;
+            gap: 5rem;
+            width: 100%;
+            overflow: visible;
+        }
+
+        .box {
+            transform: translateY(1000px);
+            z-index: 999;
+            /* font-size: 28px; */
+            font-weight: 700;
+            background-color: blue;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 10rem;
+            width: 6%;
+            margin: 10px;
+            border-radius: 50%;
+        }
+
+        code {
+            padding: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-container">
+        <div class="box green" data-speed="2"></div>
+        <div class="box purple" data-speed="0.4"></div>
+        <div class="box orange" data-speed="0.8"></div>
+        <div class="box red" data-speed="1"></div>
+        <div class="box blue" data-speed="0.75"></div>
+        <div class="box blue" data-speed="1.75"></div>
+        <div class="box blue" data-speed="2"></div>
+    </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"
+        integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"
+        integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="effect.js"></script>
+</body>
+
+</html>
