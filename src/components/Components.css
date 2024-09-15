@@ -396,16 +396,20 @@
     border-radius: 50px;
 }
 
-/* About */
-.abt-page{
+/*About*/
+.abt-page {
     height: 100vh;
     width: 100%;
     padding: 5rem 1rem;
     box-sizing: border-box;
     background-color: #0f0f15;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.abt-page .abt-head h1{
+.abt-page .abt-head h1 {
     width: 80%;
     position: absolute;
     top: 50%;
@@ -415,6 +419,60 @@
     font-weight: 500;
     line-height: 1;
     font-size: 10vw;
-    /* text-transform: uppercase; */
-    font-family: jetbrains mono nerd;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.abt-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.mission, .values {
+    margin: 3rem 0;
+    text-align: center;
+}
+
+.mission h2, .values h2 {
+    font-size: 2rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #00b4d8;
+    margin-bottom: 1.5rem;
+}
+
+.mission p, .values ul {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #d1d1e9;
+    margin: 0 auto;
+    max-width: 900px;
+}
+
+.values ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.values ul li {
+    margin-bottom: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+    position: relative;
+}
+
+.values ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #00b4d8;
+}
+
+.abt-footer {
+    text-align: center;
+    padding: 1rem 0;
+    background-color: #121212;
+    font-size: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #777;
 }
