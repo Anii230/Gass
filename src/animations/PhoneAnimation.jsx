@@ -12,7 +12,7 @@ const options = {
 };
 
 
-const Lottie = () => {
+const PhoneAnimation = () => {
     const lottieObj = useLottie(options, style);
     const Animation = useLottieInteractivity({
         lottieObj,
@@ -26,11 +26,11 @@ const Lottie = () => {
             {
                 visibility: [0.4, 0.6],
                 type: "loop",
-                frames: [25, 69],
+                frames: [30, 65],
             }
         ]
     })
     return Animation;
 }
 
-export default Lottie
+export default PhoneAnimation

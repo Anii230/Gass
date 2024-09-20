@@ -1,7 +1,7 @@
 import React, { useRef } from 'react'
 import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
-import transition from '../transition'
+// import transition from '../transition'
 import "./Components.css"
 
 
@@ -10,7 +10,7 @@ const About = () => {
         <>
         <div className="abt-page">
     <div className="abt-head">
-        <h1>About Us</h1>
+        {/* <h1>About Us</h1> */}
     </div>
 
     <div className="abt-content">
@@ -41,4 +41,4 @@ const About = () => {
     )
 }
 
-export default transition(About)
+export default About

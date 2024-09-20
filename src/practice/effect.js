@@ -33,3 +33,16 @@ gsap.to(".box", {
         scrub: true // Smooth scroll the animation based on scroll position
     }
 })
+
+        // gsap.to(".scroll-rev span", {
+        //     scrollTrigger: {
+        //         trigger: ".scroll-rev",
+        //         start: "top 50%",
+        //         end: "top 10%",
+        //         scrub: true,
+        //         stagger:true
+        //     },
+        //     backgroundSize: "100% 100%",
+        //     ease: "none",
+        //     duration:4
+        // });

@@ -1,0 +1,10 @@
+*{
+    background-color: #0f0f15;
+    color: white;
+}
+
+.homeContainer{
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+}

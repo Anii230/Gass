@@ -1,14 +1,15 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter, Outlet } from "react-router-dom"
+import { RouterProvider, createBrowserRouter, Outlet, useLocation } from "react-router-dom"
 import Navbar from './Navbar'
 import Home from './Home'
 import About from './About'
-import Login from './Login'
 import './Components.css'
 import transition from '../transition'
 import { AnimatePresence } from 'framer-motion'
 
 const Layout = () => {
+    const location = useLocation();
+
     return (
         <>
             <Navbar />
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
             { path: "Home", element: <Home /> },
             { path: "About", element: <About /> },
             { path: "About", element: <About /> },
-            { path: "Login", element: <Login /> },
+            // { path: "Login", element: <Login /> },
         ]
     }
 ])
