@@ -40,38 +40,30 @@ const Home = () => {
             scrollTrigger:{
                 trigger:".home-sec4",
                 start:"50% 50%",
-                end:"100% 50%",
+                end:"200% 50%",
                 pin:true,
-                markers:true,
+                // markers:true,
                 scrub:1,
             }
         })
 
-        t2.to(".c-one", {
-            marginTop:"-25%",
-            opacity:"1",
-        }, 'sct-1')
+        t2.fromTo(".c-one",
+            { marginTop: "50%", opacity: 0 },
+            { marginTop: "0%", opacity: 1, duration: 1 }, 'sct-1'
+        ).to(".c-one",
+            { marginTop: "-50%", opacity: 0, duration: 1 }, 'sct-2');
 
-        t2.to(".c-two", {
-            opacity:"1",
-        }, 'sct-2')
+        t2.fromTo(".c-two",
+            { marginTop: "50%", opacity: 0 },
+            { marginTop: "0%", opacity: 1, duration: 1 }, 'sct-2+=0.5'
+        ).to(".c-two",
+            { marginTop: "-100%", opacity: 0, duration: 1 }, 'sct-3+=0.5');
 
-        t2.to(".c-one", {
-            marginTop:"-100",
-            opacity:"0",
-        }, 'sct-2')
-
-        t2.to(".c-three", {
-            opacity:"1",
-        }, 'sct-3')
-
-        t2.to(".c-two", {
-            opacity:"0",
-        }, 'sct-3')
-
-        t2.to(".c-one", {
-            marginTop:"-180%",
-        }, 'sect-3')
+        t2.fromTo(".c-three",
+            { marginTop: "50%", opacity: 0 },
+            { marginTop: "0%", opacity: 1, duration: 1 }, 'sct-3+=0.5'
+        ).to(".c-three",
+            { marginTop: "-50%", opacity: 0, duration: 1 }, 'sct-4+=0.5');
 
     })
 
@@ -120,13 +112,8 @@ const Home = () => {
                 <div className="home-sec4">
                     <div className="p4-left">
                         <h1>Features we provide</h1>
-                        <div className="p4-star">
-                            {/* <svg className='star' width="36" height="38" viewBox="0 0 36 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M15.196 37.0682L15.7074 23.0057L3.81818 30.5483L0.75 25.179L13.2784 18.6591L0.75 12.1392L3.81818 6.76989L15.7074 14.3125L15.196 0.25H21.3324L20.821 14.3125L32.7102 6.76989L35.7784 12.1392L23.25 18.6591L35.7784 25.179L32.7102 30.5483L20.821 23.0057L21.3324 37.0682H15.196Z" fill="white" />
-                            </svg> */}
-
-                        </div>
                     </div>
+
                     <div className="p4-right">
                         <div className="p4-scroll c-one">
                             <h1>Growth and 1</h1>

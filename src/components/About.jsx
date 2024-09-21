@@ -7,38 +7,51 @@ import "./Components.css"
 
 const About = () => {
     return (
-        <>
-        <div className="abt-page">
-    <div className="abt-head">
-        {/* <h1>About Us</h1> */}
-    </div>
+        <div className="about-container">
+            <section className="about-header">
+                <h1>About Gass</h1>
+            </section>
 
-    <div className="abt-content">
-        <section className="mission">
-            <h2>Our Mission</h2>
-            <p>
-                At GASS, we aim to bring people closer by providing a platform that encourages meaningful conversations, creativity, and community building. Our mission is to ensure that everyone has a voice, and we empower our users by putting their privacy and control first.
-            </p>
-        </section>
+            <section className="about-content">
+                <h2>Our Mission</h2>
+                <p>
+                    At Gass, we believe in creating meaningful connections through our platform. Our mission is to empower individuals to
+                    share their stories, connect with others, and foster a sense of community. We aim to provide a safe and engaging environment
+                    for everyone.
+                </p>
 
-        <section className="values">
-            <h2>Core Values</h2>
-            <ul>
-                <li><strong>Community:</strong> We believe in the power of connection, and our platform is built to nurture genuine communities.</li>
-                <li><strong>Privacy:</strong> We take your data and privacy seriously, ensuring top-notch security.</li>
-                <li><strong>Inclusion:</strong> GASS is for everyone, regardless of background, culture, or interests.</li>
-                <li><strong>Innovation:</strong> We continuously improve, with our users’ experience as our top priority.</li>
-            </ul>
-        </section>
-    </div>
+                <h2>What We Do</h2>
+                <p>
+                    Gass is a social media platform designed for users to share content, express their ideas, and connect with like-minded
+                    individuals. Whether it's sharing photos, updates, or engaging in discussions, Gass offers a space for all voices to be heard.
+                </p>
 
-    <footer className="abt-footer">
-        <p>&copy; 2024 GASS - All Rights Reserved</p>
-    </footer>
-</div>
+                <h2>Our Values</h2>
+                <p>
+                    We are committed to transparency, inclusivity, and respect. Our team works tirelessly to ensure that Gass remains a platform
+                    where everyone feels valued and heard. We prioritize user feedback to continuously improve our services and enhance user experience.
+                </p>
 
-        </>
-    )
-}
+                <h2>Meet the Team</h2>
+                <p>
+                    Our dedicated team is composed of individuals from diverse backgrounds, bringing a wealth of experience in technology, design,
+                    and community building. Together, we strive to make Gass a vibrant and innovative platform.
+                </p>
+
+                <h2>Join Us</h2>
+                <p>
+                    We invite you to be part of our growing community! Sign up today to start connecting with others, sharing your experiences,
+                    and exploring new ideas. Together, we can make Gass a place where connections thrive.
+                </p>
+
+                <h2>Contact Us</h2>
+                <p>
+                    If you have any questions or would like to learn more about Gass, feel free to reach out to us at contact@gass.com.
+                </p>
+            </section>
+        </div>
+    );
+};
+
 
 export default About

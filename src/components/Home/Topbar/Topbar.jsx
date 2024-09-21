@@ -3,7 +3,7 @@ import "./Topbar.css";
 
 const Topbar = () => {
     return (
-        <nav className="navbar">
+        <nav className="Topbar">
             <div className="topContainer">
                 {/* Logo */}
                 <div className="topLogo">

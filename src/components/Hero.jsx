@@ -2,6 +2,7 @@ import React from 'react'
 import { RouterProvider, createBrowserRouter, Outlet, useLocation } from "react-router-dom"
 import Navbar from './Navbar'
 import Home from './Home'
+import Privacy from './Privacy'
 import About from './About'
 import './Components.css'
 import transition from '../transition'
@@ -26,7 +27,7 @@ const router = createBrowserRouter([
         children: [
             { path: "/", element: <Home /> },
             { path: "Home", element: <Home /> },
-            { path: "About", element: <About /> },
+            { path: "Privacy", element: <Privacy /> },
             { path: "About", element: <About /> },
             // { path: "Login", element: <Login /> },
         ]
