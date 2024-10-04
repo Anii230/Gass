@@ -1,12 +1,11 @@
-import React, { useRef } from 'react'
-import gsap from 'gsap'
-import { useGSAP } from '@gsap/react'
+import React from 'react';
 // import transition from '../transition'
-import "./Components.css"
+import "./Components.css";
 
 
 const About = () => {
     return (
+        <div className="a-container">
         <div className="about-container">
             <section className="about-header">
                 <h1>About Gass</h1>
@@ -49,6 +48,7 @@ const About = () => {
                     If you have any questions or would like to learn more about Gass, feel free to reach out to us at contact@gass.com.
                 </p>
             </section>
+        </div>
         </div>
     );
 };

@@ -56,7 +56,7 @@ export const Posts = [
     {
         id: 1,
         desc: "Adventure awaits, go find it.",
-        photo: "assets/post/1.jpeg",
+        photo: "assets/post/15.jpg",
         date: "10 mins ago",
         userId: 1,
         like: 24,
@@ -65,7 +65,7 @@ export const Posts = [
     {
         id: 2,
         desc: "Happiness is a journey, not a destination.",
-        photo: "assets/post/2.jpeg",
+        photo: "assets/post/14.jpg",
         date: "30 mins ago",
         userId: 2,
         like: 19,
@@ -74,7 +74,7 @@ export const Posts = [
     {
         id: 3,
         desc: "Just living my best life!",
-        photo: "assets/post/3.jpeg",
+        photo: "assets/post/13.jpg",
         date: "45 mins ago",
         userId: 3,
         like: 85,
@@ -83,7 +83,7 @@ export const Posts = [
     {
         id: 4,
         desc: "The best is yet to come.",
-        photo: "assets/post/4.jpeg",
+        photo: "assets/post/12.jpg",
         date: "1 hour ago",
         userId: 4,
         like: 33,
@@ -92,7 +92,7 @@ export const Posts = [
     {
         id: 5,
         desc: "Do more of what makes you happy.",
-        photo: "assets/post/5.jpeg",
+        photo: "assets/post/11.jpg",
         date: "3 hours ago",
         userId: 5,
         like: 57,

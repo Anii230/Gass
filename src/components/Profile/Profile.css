@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    background-color: #0f0f15;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    width: 100vw;
+}
+
+.profile-page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.left-section {
+    flex: 1;
+    padding: 20px;
+    background-color: #1b1b24;
+    border-right: 1px solid #4b4b55;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.avatar {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid #4b4b55;
+    transition: transform 0.3s;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}
+
+.username {
+    font-size: 2rem;
+    margin: 10px 0;
+}
+
+.bio {
+    color: #b0b0b0;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.tags {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+
+.tag {
+    background-color: #4b4b55;
+    border-radius: 15px;
+    padding: 5px 10px;
+    margin: 0 5px;
+    transition: background-color 0.3s;
+}
+
+.tag:hover {
+    background-color: #5c5c66;
+}
+
+.social-links {
+    margin: 10px 0;
+}
+
+.social-link {
+    color: #007bff;
+    margin: 0 5px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: #0056b3;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically */
+    margin-top: auto; /* Push buttons to the bottom */
+    width: 100%;
+    padding-bottom: 20px; /* Add some space at the bottom */
+}
+
+.row {
+    display: block; /* Make each button a block element */
+    width: 100%; /* Take full width */
+    margin: 5px 0; /* Minimal margin between buttons */
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%; /* Full width of parent */
+    height: 40px; /* Fixed height */
+    margin: 5px 0; /* Space between buttons */
+}
+
+.edit-button:hover,
+.account-button:hover,
+.message-button:hover,
+.share-button:hover,
+.settings-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.account-button {
+    background-color: #28a745;
+}
+
+.account-button:hover {
+    background-color: #218838;
+}
+
+.message-button {
+    background-color: #ffc107;
+}
+
+.message-button:hover {
+    background-color: #e0a800;
+}
+
+.share-button {
+    background-color: #17a2b8;
+}
+
+.share-button:hover {
+    background-color: #138496;
+}
+
+.right-section {
+    flex: 2;
+    padding: 20px;
+    background-color: #1b1b24;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+h2:after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 4px;
+    background: #007bff;
+    margin: 0 auto;
+}
+
+.posts-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px dashed #4b4b55;
+    color: #b0b0b0;
+}

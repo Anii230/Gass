@@ -1,8 +1,9 @@
-import React from 'react'
-import "./Components.css"
+import React from 'react';
+import "./Components.css";
 
 const Privacy = () => {
     return (
+        <div className="p-container">
         <div className="privacy-container">
             <section className="privacy-header">
                 <h1>Privacy Policy</h1>
@@ -51,6 +52,7 @@ const Privacy = () => {
                     If you have any questions or concerns about this Privacy Policy, please contact us at privacy@gass.com.
                 </p>
             </section>
+        </div>
         </div>
     );
 }

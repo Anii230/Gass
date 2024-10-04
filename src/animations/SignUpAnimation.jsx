@@ -1,35 +1,30 @@
 import { useLottie, useLottieInteractivity } from 'lottie-react';
-import sm from "../assets/centerp2animation.json";
+import sa from '../assets/SignUpAnimation.json';
 
 const style = {
-    height: "80%",
+    height: '80%',
 };
 
 const options = {
-    animationData: sm,
+    animationData: sa,
     autoplay: false,
 };
 
-
-const PhoneAnimation = () => {
+const SignUpAnimation = () => {
     const lottieObj = useLottie(options, style);
     const Animation = useLottieInteractivity({
         lottieObj,
         mode: "scroll",
         actions: [
             {
-                visibility: [0.2, 0.4],
+                visibility: [0.2, 0.9],
                 type: "seek",
-                frames: [0, 25],
+                frames: [0, 200],
             },
-            {
-                visibility: [0.4, 0.6],
-                type: "loop",
-                frames: [30, 65],
-            }
         ]
-    })
-    return Animation;
-}
+    });
 
-export default PhoneAnimation
+    return Animation;
+};
+
+export default SignUpAnimation;

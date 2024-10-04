@@ -1,8 +1,6 @@
 import React from 'react';
-import {RouterProvider,createBrowserRouter} from "react-router-dom"
 import Hero from './components/Hero';
-import Home from './components/Home/Home';
-
+import Home from './components/Home';
 
 const App = () => {
   return (

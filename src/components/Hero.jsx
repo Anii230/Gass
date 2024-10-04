@@ -1,12 +1,11 @@
 import React from 'react'
-import { RouterProvider, createBrowserRouter, Outlet, useLocation } from "react-router-dom"
-import Navbar from './Navbar'
-import Home from './Home'
-import Privacy from './Privacy'
+import { createBrowserRouter, Outlet, RouterProvider, useLocation } from "react-router-dom"
 import About from './About'
 import './Components.css'
-import transition from '../transition'
-import { AnimatePresence } from 'framer-motion'
+import Home from './Home'
+import LoginSignup from './LoginSignup'
+import Navbar from './Navbar'
+import Privacy from './Privacy'
 
 const Layout = () => {
     const location = useLocation();
@@ -29,7 +28,7 @@ const router = createBrowserRouter([
             { path: "Home", element: <Home /> },
             { path: "Privacy", element: <Privacy /> },
             { path: "About", element: <About /> },
-            // { path: "Login", element: <Login /> },
+            { path: "LoginSignup", element: <LoginSignup /> },
         ]
     }
 ])

@@ -1,10 +1,13 @@
-*{
+/* *{
     background-color: #0f0f15;
     color: white;
+    background-color: #fff;
+    color: black;
 }
 
 .homeContainer{
+
     width: 100%;
     display: flex;
     padding: 2rem;
-}
+} */

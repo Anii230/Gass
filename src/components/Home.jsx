@@ -1,9 +1,10 @@
-import React from 'react'
-import gsap from 'gsap'
 import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
-import useLenis from '../hooks/useLenis'
+import React from 'react'
 import PhoneAnimation from '../animations/PhoneAnimation.jsx'
+import SignUpAnimation from '../animations/SignUpAnimation.jsx'
+import useLenis from '../hooks/useLenis'
 import "./Components.css"
 
 gsap.registerPlugin(useGSAP);
@@ -116,20 +117,30 @@ const Home = () => {
 
                     <div className="p4-right">
                         <div className="p4-scroll c-one">
-                            <h1>Growth and 1</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora adipisci amet blanditiis aspernatur aliquam assumenda nesciunt aut modi delectus vel iste dignissimos doloremque, rerum labore quos minus fuga? Nesciunt, aut.</p>
+                            <h1>Simple and Smooth Ui</h1>
+                            <p>Gass features a simple and smooth user interface designed for easy navigation, allowing users to effortlessly connect and interact. Its intuitive layout enhances the overall user experience, making it accessible to all.</p>
                         </div>
                         <div className="p4-scroll c-two">
-                            <h1>Growth and 2</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora adipisci amet blanditiis aspernatur aliquam assumenda nesciunt aut modi delectus vel iste dignissimos doloremque, rerum labore quos minus fuga? Nesciunt, aut.</p>
+                            <h1>Open Source</h1>
+                            <p>Gass is built as an open-source platform, encouraging community collaboration and contributions. This transparency allows developers to improve the platform continuously, ensuring that it evolves to meet user needs and preferences.</p>
                         </div>
                         <div className="p4-scroll c-three">
-                            <h1>Growth and 3</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora adipisci amet blanditiis aspernatur aliquam assumenda nesciunt aut modi delectus vel iste dignissimos doloremque, rerum labore quos minus fuga? Nesciunt, aut.</p>
+                            <h1>Security and Privacy</h1>
+                            <p>Gass prioritizes user security and privacy, implementing robust measures to protect personal information. With end-to-end encryption and user control over privacy settings, users can engage confidently, knowing their data is secure.</p>
                         </div>
                     </div>
                 </div>
-                <div className="home-sec5"></div>
+                <div className="home-sec5">
+                    <div className="sec5-part-1">
+                            <SignUpAnimation />
+                    </div>
+                    <div className="sec5-part-2">
+                        <h1 className='gass-head'>How we Socialize at <span className='hg-head'>GASS</span></h1>
+                        <p>Gass connects users with similar interests, promoting networking and collaboration. It helps maintain friendships, discover new opportunities, and expand social circles. With its inclusive and user-friendly design, Gass ensures everyone can participate, regardless of technical skills.</p>
+                        <button>Learn more</button>
+                    </div>
+                </div>
+                <div className="home-sec6"></div>
             </div>
         </>
     )
