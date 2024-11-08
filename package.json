@@ -21,6 +21,7 @@
     "@mui/icons-material": "^6.1.1",
     "@mui/material": "^6.1.1",
     "@studio-freight/lenis": "^1.0.42",
+    "express": "^4.21.1",
     "framer-motion": "^11.5.4",
     "gsap": "^3.12.5",
     "lottie-react": "^2.4.0",

@@ -15,7 +15,7 @@ const LoginSignup = () => {
 
     const toggle = () => {
         setIsSignIn((prev) => !prev);
-        setError(''); // Reset errors when toggling
+        setError('');
     };
 
     useEffect(() => {
@@ -29,7 +29,6 @@ const LoginSignup = () => {
         }
     }, [isSignIn]);
 
-    // Handle form input changes
     const handleChange = (e) => {
         setFormData({
             ...formData,
@@ -37,7 +36,6 @@ const LoginSignup = () => {
         });
     };
 
-    // Validate form fields before submission
     const validate = () => {
         const { username, email, password, confirmPassword, age, phone } = formData;
 
@@ -77,14 +75,13 @@ const LoginSignup = () => {
             return false;
         }
 
-        setError(''); // Clear any previous errors
+        setError('');
         return true;
     };
 
     const handleSubmit = (e) => {
         e.preventDefault();
         if (validate()) {
-            // Proceed with form submission (e.g., API call)
             console.log("Form Submitted:", formData);
         }
     };
@@ -108,12 +105,6 @@ const LoginSignup = () => {
                                 </div>
                                 <div className="input-group">
                                     <input type="password" name="confirmPassword" placeholder="Confirm password" value={formData.confirmPassword} onChange={handleChange} />
-                                </div>
-                                <div className="input-group">
-                                    <input type="number" name="age" placeholder="Age" value={formData.age} onChange={handleChange} />
-                                </div>
-                                <div className="input-group">
-                                    <input type="tel" name="phone" placeholder="Phone" value={formData.phone} onChange={handleChange} />
                                 </div>
                                 <div id="error" style={{ color: 'red' }}>
                                     <span>{error}</span>
