@@ -1,3 +1,63 @@
-.rightbar{
-    flex: 3.5;
+.suggested-feed {
+    width: auto;
+    margin-top:60px;
+    max-width: 600px;
+    background-color: aliceblue;
+    padding: 20px;
+    border-radius: 50px;
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    height: 420px;
+    transition: 0.3s ease;
+  }
+
+.title {
+font-size: 24px;
+font-weight: bold;
+text-align: center;
+margin-bottom: 20px;
+color: #333;
+}
+
+.row {
+    width: 400px;
+display: flex;
+justify-content: space-around;
+margin-bottom: 15px;
+height: auto;
+}
+
+.person-card {
+width: 30%;
+text-align: center;
+background-color: rgb(222, 237, 252);
+padding: 20px;
+border-radius: 80px;
+transition: 0.3s;
+}
+
+.person-card img {
+width: 70px;
+height: 70px;
+border-radius: 50%;
+object-fit: cover;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.person-name {
+font-size: 16px;
+margin-top: 10px;
+color: #333;
+font-weight: bolder;
+}
+.suggested-feed:hover{
+    transform: scale(1.02);
+    background-image: linear-gradient(rgb(243, 248, 251),rgb(231, 242, 251));
+
+}
+
+.person-card:hover{
+    transform: scale(1.05);
+    box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
+    background-image: linear-gradient(aliceblue,rgb(170, 212, 250));
+
 }

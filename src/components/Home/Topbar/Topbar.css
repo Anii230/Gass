@@ -1,11 +1,16 @@
 /* Topbar Container */
 .Topbar {
+    z-index: 1;
     /* background-color: #fff; */
     border-bottom: 1px solid #ccc;
+    backdrop-filter: blur(100px);
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: fixed;
+    width: 100%;
+    background-color: #ffffffc6;
 }
 
 .topContainer {
@@ -20,7 +25,7 @@
     font-family: monoton;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #fff;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -28,13 +33,14 @@
 .topSearch {
     flex-grow: 1;
     margin: 0 20px;
+    margin-left: 500px;
 }
 
 .searchInput {
     width: 100%;
     max-width: 400px;
     padding: 8px;
-    border-radius: 4px;
+    border-radius: 20px;
     border: 1px solid #ccc;
 }
 
@@ -55,9 +61,8 @@
 }
 
 .toppfp {
-    width: 40px;
+    width: 45px;
     height: 40px;
-    border-radius: 50%;
     overflow: hidden;
 }
 

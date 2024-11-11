@@ -1,11 +1,12 @@
 import React from 'react';
-import Home from './components/Home/Home';
-import Hero from './components/Hero'
+import Hero from './components/Hero';
+import Home from './components/Home';
 
 const App = () => {
   return (
     <>
         <Hero></Hero>
+        {/* <Home></Home> */}
         {/* <Home></Home> */}
         {/* <Profile></Profile> */}
     </>

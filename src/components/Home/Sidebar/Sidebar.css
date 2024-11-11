@@ -4,6 +4,7 @@
     overflow-y: scroll;
     position: sticky;
     top: 50px;
+    margin: 20px;
 }
 
 ::-webkit-scrollbar {
@@ -23,16 +24,30 @@
 }
 
 .sidebarList {
-    padding: 0;
-    margin: 0;
+    padding:25px;
+    margin: 10;
     list-style: none;
+    background-color: rgb(244, 244, 244);
+    border-radius: 30px;
+    
 }
 
 .sidebarListItem {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    transition: 0.5s ease;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    
 }
+.sidebarListItem:hover {
+   background-color: #ffffff;
+    padding: 10px;
+    border-radius: 30px;
+}
+
 
 .sidebarIcon {
     margin-right: 15px;
@@ -48,10 +63,25 @@
 
 .sidebarHr {
     margin: 20px 0;
+  
 }
 
 .sidebarFriendList {
-    padding: 0;
-    margin: 0;
+    padding: 20px;
+    background-color: rgb(242, 242, 242);
+    margin: 5px;
     list-style: none;
+    border-radius: 30px;
+    cursor: pointer;
+    height: 450px;
+    overflow-x: scroll;
+}
+.sidebarFriendList li{
+    transition: 0.5s;
+}
+.sidebarFriendList  li:hover{
+    background-color: #ffffff;
+    padding: 4px;
+    border-radius: 20px;
+    transform: scale(1.02); 
 }
