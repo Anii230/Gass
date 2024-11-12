@@ -1,0 +1,173 @@
+:root{
+    font-size: 100%;
+    font-size: 16px;
+    line-height: 1.5;
+    --primary-blue: #233975;
+}
+
+body{
+    padding: 0%;
+    margin: 0%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #0f0f15;
+}
+
+h1{
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+h2{
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(40, 40, 215);
+}
+a:hover{
+    text-decoration: underline;
+}
+
+.pol{
+    font-size: 80%;
+    text-align: center;
+}
+
+.splt-scrn{
+    display: flex;
+    flex-direction: column;
+}
+
+.left{
+    height: 200px;
+    animation: slideFromLeft 1s ease-out forwards;
+    z-index: 2;
+}
+
+.left, .right{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left{
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url(images/signup1.png);
+    background-size: cover;
+    /* position: relative; */
+    background-position: center;
+    animation: slideFromLeft 1.2s ease-out forwards;
+    z-index: 2;
+}
+
+.left .txt{
+    color: white;
+    text-align: center;
+}
+
+.left p{
+    font-weight: 400;
+}
+
+.right .txt{
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.right .txt p{
+    margin: 1.5rem 0;
+    font-size: 0.875rem;
+}
+
+.right form{
+    width: 328px;
+}
+
+.right{
+   animation: slideFromRight 1.2s ease-out forwards;
+    z-index: 1;
+}
+
+.error-message {
+    color: red;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+
+@keyframes slideFromLeft {
+      from {
+        transform: translateX(-100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideFromRight {
+      from {
+        transform: translateX(100%);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+    border: 1px solid #c4c4c4;
+    padding: 1em;
+    margin-bottom: 1.25rem;
+    font-size: 0.875rem;
+}
+
+label{
+    display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.75rem;
+    color: white;
+}
+
+input-container.password{
+    position: relative;
+}
+
+
+.sign-btn{
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    background: var(--primary-blue);
+    color: white;
+    font-weight: 700;
+    border: none;
+    padding: 1rem;
+    border-radius: 8px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media screen and (min-width: 900px) {
+    body{
+        overflow-y: hidden;
+        overflow-x: hidden;
+    }
+    .splt-scrn{
+        flex-direction: row;
+        height: 100vh;
+
+        .left, .right{
+            display: flex;
+            width: 50%;
+            height: auto;
+        }
+    }
+}

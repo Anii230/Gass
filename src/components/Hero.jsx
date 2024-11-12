@@ -1,11 +1,12 @@
-import React from 'react'
-import { createBrowserRouter, Outlet, RouterProvider, useLocation } from "react-router-dom"
-import About from './About'
-import './Components.css'
-import Home from './Home'
-import LoginSignup from './LoginSignup'
-import Navbar from './Navbar'
-import Privacy from './Privacy'
+import React from 'react';
+import { createBrowserRouter, Outlet, RouterProvider, useLocation } from "react-router-dom";
+import About from './About';
+import './Components.css';
+import Home from './Home';
+import Login from './Login';
+import Navbar from './Navbar';
+import Privacy from './Privacy';
+import Signup from './Signup';
 
 const Layout = () => {
     const location = useLocation();
@@ -14,10 +15,9 @@ const Layout = () => {
         <>
             <Navbar />
             <Outlet />
-
         </>
-    )
-}
+    );
+};
 
 const router = createBrowserRouter([
     {
@@ -28,18 +28,16 @@ const router = createBrowserRouter([
             { path: "Home", element: <Home /> },
             { path: "Privacy", element: <Privacy /> },
             { path: "About", element: <About /> },
-            { path: "LoginSignup", element: <LoginSignup /> },
+            { path: "Login", element: <Login /> },
+            { path: "Signup", element: <Signup /> },
         ]
     }
-])
+]);
 
 const Hero = () => {
     return (
-        <>
+        <RouterProvider router={router} />
+    );
+};
 
-            <RouterProvider router={router} />
-        </>
-    )
-}
-
-export default Hero
+export default Hero;

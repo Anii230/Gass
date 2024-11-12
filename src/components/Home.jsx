@@ -2,6 +2,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import React from 'react'
+import { Link } from 'react-router-dom'
 import PhoneAnimation from '../animations/PhoneAnimation.jsx'
 import SignUpAnimation from '../animations/SignUpAnimation.jsx'
 import useLenis from '../hooks/useLenis'
@@ -103,7 +104,7 @@ const Home = () => {
                     <div className="part-1">
                         <h1 className='gass-head'>Introducing, <span className='hg-head'>GASS</span></h1>
                         <p><span className='gass-abbrev'>Gather</span> ideas, <span className='gass-abbrev'>Amplify</span> voices, and <span className='gass-abbrev'>Share</span> your story—where every moment finds its place, and <span className='gass-abbrev'>socializing</span> becomes a vibrant connection. Welcome to a community built for you.</p>
-                        <button>Get Started Now</button>
+                        <Link to="/Login"><button>Get Started</button></Link>
                     </div>
                     <div className="part-2">
                         <PhoneAnimation />
