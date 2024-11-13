@@ -1,39 +1,42 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useContext, useState } from "react";
+import { Link } from "react-router-dom";
+import { AuthContext } from '../context/authContext';
 import "./Login.css";
 
 const Login = () => {
-    const [name, setName] = useState('');
-    const [password, setPassword] = useState('');
-    const [errors, setErrors] = useState('');
+    const [inputs, setInputs] = useState({
+        username: "",
+        password: "",
+    });
+    const [err, setErr] = useState(null);
 
-    const handleSubmit = (e) => {
+    // const navigate = useNavigate()
+
+    const handleChange = (e) => {
+        setInputs((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+    const { login } = useContext(AuthContext);
+
+    const handleLogin = async (e) => {
         e.preventDefault();
-
-        let newErrors = '';
-
-        if (!name.trim() || !password.trim()) {
-            newErrors = "All fields are required";
-        } else if (!name.trim()) {
-            newErrors = "Full Name is required";
-        } else if (!password.trim()) {
-            newErrors = "Password is required";
-        } else if (password.length < 7) {
-            newErrors = "Password must be at least 7 characters";
-        }
-
-        if (newErrors) {
-            setErrors(newErrors);
-        } else {
-            console.log("Form Submitted Successfully");
-            setErrors('');
+        try {
+            const response = await login(inputs);
+            console.log("Login Response:", response); // Log the response to check
+        } catch (err) {
+            if (err.response) {
+                setErr(err.response.data);
+                console.log("Error Response:", err.response); // Log the error response
+            } else {
+                setErr("An unexpected error occurred.");
+                console.log("Error:", err); // Log error if there's no response
+            }
         }
     };
 
     return (
         <div className="splt-scrn">
             <div className="left">
-                <form onSubmit={handleSubmit}>
+                <form>
                     <section className="txt">
                         <h2>Login</h2>
                         <div className="signup-container">
@@ -47,10 +50,9 @@ const Login = () => {
                         <label htmlFor="name">Full Name</label>
                         <input
                             type="text"
-                            name="name"
+                            name="username"
                             id="name"
-                            value={name}
-                            onChange={(e) => setName(e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -60,15 +62,13 @@ const Login = () => {
                             type="password"
                             name="password"
                             id="password"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
 
-                    <button style={{ cursor: 'pointer' }} className="sign-btn" type="submit">Proceed</button>
+                    <button style={{ cursor: 'pointer' }} className="sign-btn" onClick={handleLogin}>Proceed</button>
                     <br />
-                    {errors && <div className="error-message">{errors}</div>}
-
+                    {err && <div className="error-message">{err}</div>}
                     <section className="txt doc">
                         <p>
                             <span className="pol">

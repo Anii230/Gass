@@ -1,40 +1,53 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "./Signup.css";
 
 const Signup = () => {
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
-    const [fullName, setFullName] = useState('');
-    const [errors, setErrors] = useState('');
 
-    const handleSubmit = (e) => {
+    const [inputs, setInputs] = useState({
+        username:"",
+        email:"",
+        password:"",
+        name:"",
+    })
+
+    const [err, setErr] = useState(null)
+
+    const handleChange = (e) => {
+        setInputs(prev=>({...prev, [e.target.name]:e.target.value}));
+    }
+
+    const handleClick = async (e)=> {
         e.preventDefault();
 
-        let newErrors = '';
-
-        if (!username.trim() || !email.trim() || !password.trim() || !fullName.trim()) {
-            newErrors = "All fields are required";
-        } else if (!username.trim()) {
-            newErrors = "User Name is required";
-        } else if (!email.trim()) {
-            newErrors = "Email is required";
-        } else if (!password.trim()) {
-            newErrors = "Password is required";
-        } else if (password.length < 7) {
-            newErrors = "Password must be at least 7 characters";
-        } else if (!fullName.trim()) {
-            newErrors = "Full Name is required";
+        if (inputs.username.length <= 4) {
+            setErr("Username should be more than 4 characters.");
+            return;
+        }
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(inputs.email)) {
+            setErr("Please enter a valid email address.");
+            return;
+        }
+        if (inputs.password.length <= 5) {
+            setErr("Password must be more than 5 characters.");
+            return;
+        }
+        if (inputs.name.trim() === "") {
+            setErr("Name cannot be empty.");
+            return;
         }
 
-        if (newErrors) {
-            setErrors(newErrors);
-        } else {
-            console.log("Form Submitted Successfully");
-            setErrors('');
+
+        try{
+            await axios.post("http://localhost:8800/server/auth/register", inputs)
+        }catch(err){
+            setErr(err.response.data)
         }
-    };
+    }
+
+    console.log(err)
 
     return (
         <div className="splt-scrn">
@@ -46,7 +59,7 @@ const Signup = () => {
             </div>
 
             <div className="right">
-                <form onSubmit={handleSubmit}>
+                <form>
                     <section className="txt">
                         <h2>Sign Up</h2>
                         <div className="login-container">
@@ -54,15 +67,13 @@ const Signup = () => {
                         </div>
                     </section>
 
-
                     <div className="input-container name">
-                        <label htmlFor="name">User Name</label>
+                        <label htmlFor="username">User Name</label>
                         <input
                             type="text"
-                            name="name"
-                            id="name"
-                            value={username}
-                            onChange={(e) => setUsername(e.target.value)}
+                            name="username"
+                            id="username"
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -72,8 +83,7 @@ const Signup = () => {
                             type="email"
                             name="email"
                             id="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -84,8 +94,7 @@ const Signup = () => {
                             name="password"
                             id="password"
                             placeholder="at least 7 characters"
-                            value={password}
-                            onChange={(e) => setPassword(e.target.value)}
+                            onChange={handleChange}
                         />
                     </div>
 
@@ -93,17 +102,15 @@ const Signup = () => {
                         <label htmlFor="fullName">Full Name</label>
                         <input
                             type="text"
-                            name="fullName"
-                            id="fullName"
-                            value={fullName}
-                            onChange={(e) => setFullName(e.target.value)}
+                            name="name"
+                            id="name"
+                            onChange={handleChange}
                         />
                     </div>
 
-                    <button style={{ cursor: 'pointer' }} className="sign-btn" type="submit">Proceed</button>
+                    <button style={{ cursor: 'pointer' }} className="sign-btn" onClick={handleClick}>Proceed</button>
                     <br />
-                    {errors && <div className="error-message">{errors}</div>}
-
+                    {err && <div className="error-message">{err}</div>}
                     <section className="txt doc">
                         <p>
                             <span className="pol">
