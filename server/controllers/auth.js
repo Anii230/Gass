@@ -3,7 +3,6 @@ import jwt from "jsonwebtoken";
 import { db } from "../connect.js";
 
 export const register = (req, res) => {
-    //CHECK USER IF EXISTS
 
     const q = "SELECT * FROM users WHERE username = ?";
 
@@ -65,7 +64,7 @@ export const login = (req, res) => {
                 // secure: true,  // Remove this unless you're using HTTPS in production
             })
             .status(200)
-            .json(others);  // Send the user data excluding the password
+            .json(others);
     });
 };
 

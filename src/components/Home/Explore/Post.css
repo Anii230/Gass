@@ -1,0 +1,130 @@
+/* Post Container */
+.post {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+    margin: 20px 0;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.post:hover {
+    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+    transform: translateY(-2px);
+}
+
+/* Post Wrapper */
+.postWrapper {
+    padding: 15px;
+}
+
+/* Post Top */
+.postTop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.postTopLeft {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.postProfileImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.postUsername {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+
+.postDate {
+    font-size: 13px;
+    color: #888;
+}
+
+/* Post Center */
+.postCenter {
+    margin: 15px 0;
+    line-height: 1.5;
+    color: #555;
+}
+
+.postImg {
+    margin-top: 15px;
+    width: 100%;
+    max-height: 400px;
+    object-fit:contain;
+    border-radius: 8px;
+}
+
+/* Post Bottom */
+.postBottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.postBottomLeft {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.likeIcon {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.likeIcon:hover {
+    transform: scale(1.1);
+}
+
+.postLikeCounter {
+    font-size: 15px;
+    color: #444;
+}
+
+/* Post Comment */
+.postCommentText {
+    cursor: pointer;
+    border-bottom: 1px dashed gray;
+    font-size: 15px;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+.postCommentText:hover {
+    color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .postWrapper {
+        padding: 10px;
+    }
+    .postProfileImg {
+        width: 35px;
+        height: 35px;
+    }
+    .postUsername {
+        font-size: 14px;
+    }
+    .postDate {
+        font-size: 12px;
+    }
+    .postImg {
+        max-height: 300px;
+    }
+}

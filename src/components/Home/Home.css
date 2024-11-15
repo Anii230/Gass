@@ -1,0 +1,11 @@
+.homeDiv{
+    background-color: #fff;
+    color: black;
+}
+
+.homeContainer{
+
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+}

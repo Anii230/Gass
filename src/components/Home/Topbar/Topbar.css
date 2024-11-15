@@ -1,0 +1,117 @@
+
+/* Topbar styling */
+.Topbar {
+    background-color: #ffffff;
+    position: sticky;
+    top: 0;
+    border-bottom: 1px solid #444;
+    padding: 10px 0; /* No horizontal padding */
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.topContainer {
+    width: 100%;
+    max-width: 100%; /* You can adjust this to fit your desired screen size */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 0 20px; /* Ensures there's no margin on the edges */
+}
+
+/* Logo */
+.topLogo a {
+    font-family: 'Monoton', sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.topLogo a:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+/* Navigation Links */
+.topLinks {
+    display: flex;
+    gap: 20px;
+    margin-left: auto; /* This moves the links to the right */
+}
+
+.topLink {
+    font-size: 1rem;
+    color: #000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.topLink:hover {
+    color: #007bff; /* Highlight color on hover */
+}
+
+/* Profile Picture */
+.topProfile .profileImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.profileImg:hover {
+    transform: scale(1.1);
+}
+
+/* Search Bar (removed as per request) */
+
+/* Create Button and Profile (removed as per request) */
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .topContainer {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .topLogo a {
+        font-size: 1.5rem;
+    }
+
+    .topLinks {
+        gap: 10px;
+    }
+
+    .topLink {
+        font-size: 1.2rem;
+    }
+
+    .topProfile .profileImg {
+        width: 35px;
+        height: 35px;
+    }
+}
+
+@media (max-width: 480px) {
+    .topContainer {
+        padding: 0 10px; /* Ensures no extra padding on small screens */
+    }
+
+    .topLinks {
+        gap: 8px;
+    }
+
+    .topLink {
+        font-size: 1rem;
+    }
+
+    .topProfile .profileImg {
+        width: 30px;
+        height: 30px;
+    }
+}

@@ -1,0 +1,124 @@
+/* Sidebar Container */
+.sidebar {
+    margin-left: 10px;
+    position: fixed;
+    top: 50%;                      /* Center vertically */
+    left: 0;                       /* Align to the left of the page */
+    transform: translateY(-50%);   /* Center the sidebar vertically */
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;       /* Ensure content is centered vertically */
+    align-items: center;           /* Align items horizontally */
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    width: auto;                   /* Sidebar width fits its content */
+    max-width: 80px;               /* Optional: set max-width */
+    min-width: 100px;               /* Optional: set min-width */
+    height: auto;                  /* Height depends on content */
+    z-index: 1000;
+    border-radius: 15px;           /* Curved borders */
+}
+
+/* Sidebar Wrapper */
+.sidebarWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Sidebar List */
+.sidebarList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Sidebar List Item */
+.sidebarListItem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 80px;
+    cursor: pointer;
+    position: relative;
+    transition: background-color 0.3s ease, padding-left 0.3s ease;
+    width: 100%;                  /* Makes the entire item clickable */
+}
+
+/* Sidebar Link */
+.sidebarLink {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #ffffff;
+    height: 100%;
+    width: 100%;                  /* Ensure the link covers the entire item */
+}
+
+/* Sidebar Icon */
+.sidebarIcon {
+    color: black;
+    font-size: 2rem;
+    margin-bottom: 5px; /* Space between icon and label */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Sidebar Label */
+.sidebarListItemText {
+    font-size: 0.85rem;
+    color: #000000;
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects on Icons and Labels */
+
+.sidebarListItem:hover .sidebarIcon {
+    transform: scale(1.2); /* Enlarge icon on hover */
+    color: #007bff; /* Change color on hover */
+}
+
+.sidebarListItem:hover .sidebarListItemText {
+    color: #007bff; /* Change text color on hover */
+}
+
+/* Active State for Icons (optional) */
+.sidebarListItem.active .sidebarIcon {
+    color: #007bff; /* Active icon color */
+    transform: scale(1.1); /* Slightly enlarged active icon */
+}
+
+.sidebarListItem.active .sidebarListItemText {
+    color: #007bff; /* Active text color */
+}
+
+/* Prevent Overlap with Feed */
+body {
+    padding-left: 100px; /* Adjust this value to create space for the sidebar */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .sidebar {
+        min-width: 50px;  /* Reduce width on small screens */
+        transform: translateY(-50%);
+    }
+
+    .sidebarIcon {
+        font-size: 1.5rem; /* Smaller icons for mobile */
+    }
+
+    .sidebarListItemText {
+        display: none; /* Hide labels on mobile */
+    }
+
+    body {
+        padding-left: 80px; /* Adjust margin for smaller screens */
+    }
+}

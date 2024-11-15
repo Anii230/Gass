@@ -51,10 +51,9 @@ a:hover{
     align-items: center;
 }
 
-.right{
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url(images/login1.png);
+.right {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.8)), url(../assets/post/3.jpeg);
     background-size: cover;
-    /* position: relative; */
     background-position: center;
     animation: slideFromRight 1.2s ease-out forwards;
     z-index: 1;
@@ -67,11 +66,21 @@ a:hover{
 
 .right p{
     font-weight: 400;
+    font-size: 12rem;
+}
+
+.right .txt h2{
+    color: #fff;
+    font-size: 2rem;
 }
 
 .left .txt{
     color: rgb(255, 255, 255);
     text-align: center;
+}
+
+.left .txt h2{
+    color: #fff;
 }
 
 .left .txt p{
@@ -150,10 +159,10 @@ label{
 }
 
 @media screen and (min-width: 900px) {
-    body{
+    /* body{
         overflow-y: hidden;
         overflow-x: hidden;
-    }
+    } */
     .splt-scrn{
         flex-direction: row;
         height: 100vh;

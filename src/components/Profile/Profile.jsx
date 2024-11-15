@@ -1,60 +1,177 @@
-import React from 'react'
-import "./Profile.css"
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import pfp from "../../assets/person/6.jpeg";
+import ConfirmationModal from '../Home/ConfirmationModal/ConfirmationModal'; // Import Modal
+import Sidebar from '../Home/Sidebar/Sidebar';
+import Topbar from '../Home/Topbar/Topbar';
+import './Profile.css';
 
 const Profile = () => {
-    const user = {
-        username: 'johndoe',
-        avatar: 'https://via.placeholder.com/150',
-        bio: 'Just another social media enthusiast! Sharing thoughts and experiences.',
-        tags: ['#SocialMedia', '#React', '#Coding'],
-        socialLinks: [
-            { platform: 'Twitter', url: 'https://twitter.com/johndoe' },
-            { platform: 'Instagram', url: 'https://instagram.com/johndoe' },
-            { platform: 'LinkedIn', url: 'https://linkedin.com/in/johndoe' },
-        ],
+    const [userData, setUserData] = useState({
+        username: '',
+        email: '',
+        bio: '',
+        profilePic: '',
+        name: ''
+    });
+    const [isEditing, setIsEditing] = useState(false);
+    const [newData, setNewData] = useState({});
+    const [showModal, setShowModal] = useState(false); // State to control modal visibility
+    const navigate = useNavigate();
+
+    // Fetch user data from localStorage
+    useEffect(() => {
+        const user = JSON.parse(localStorage.getItem('user'));
+        if (!user) {
+            navigate('/'); // Redirect to home if no user in localStorage
+        } else {
+            setUserData({
+                username: user.username,
+                email: user.email,
+                bio: user.bio || '',
+                profilePic: user.profilePic || pfp,
+                name: user.name || ''
+            });
+        }
+    }, [navigate]);
+
+    // Handle input changes for editing
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setNewData({
+            ...newData,
+            [name]: value
+        });
     };
+
+    // Toggle edit mode
+    const toggleEdit = () => {
+        setIsEditing(!isEditing);
+    };
+
+    // Save profile updates to localStorage
+    const handleSave = (e) => {
+        e.preventDefault();
+        setUserData((prevData) => {
+            const updatedData = { ...prevData, ...newData };
+            localStorage.setItem('user', JSON.stringify(updatedData)); // Save to localStorage
+            return updatedData;
+        });
+        setIsEditing(false);
+    };
+
+    // Handle delete profile button click (show confirmation modal)
+    const handleDeleteProfile = () => {
+        setShowModal(true); // Show the confirmation modal
+    };
+
+    // Handle profile deletion
+    const handleConfirmDelete = () => {
+        localStorage.removeItem('user');
+        alert('Profile deleted successfully!');
+        navigate('/'); // Redirect to homepage after deletion
+    };
+
+    // Handle cancellation of deletion
+    const handleCancelDelete = () => {
+        setShowModal(false); // Close the modal without deleting the profile
+    };
+
     return (
         <>
-            <div className="profile-page">
-                <div className="left-section">
-                    <img src={user.avatar} alt={`${user.username}'s avatar`} className="avatar" />
-                    <h1 className="username">@{user.username}</h1>
-                    <p className="bio">{user.bio}</p>
-                    <div className="tags">
-                        {user.tags.map((tag, index) => (
-                            <span key={index} className="tag">{tag}</span>
-                        ))}
-                    </div>
-                    <div className="social-links">
-                        {user.socialLinks.map((link, index) => (
-                            <a key={index} href={link.url} className="social-link" target="_blank" rel="noopener noreferrer">
-                                {link.platform}
-                            </a>
-                        ))}
-                    </div>
-                    <div className="button-group">
-                        <div className="row">
-                            <button className="edit-button">Edit Profile</button>
-                            <button className="account-button">Account</button>
+            <Topbar />
+            <Sidebar />
+            <div className="profile">
+                <div className="left"></div>
+                <div className="person-profile">
+                    <div className="profile-container">
+                        <div className="actions">
+                            <button className='editBtn' onClick={toggleEdit}>
+                                {isEditing ? 'Cancel' : 'Edit Profile'}
+                            </button>
+                            <button className='delBtn' onClick={handleDeleteProfile}>Delete Profile</button>
                         </div>
-                        <div className="row">
-                            <button className="message-button">Message</button>
-                            <button className="share-button">Share</button>
+
+                        <div className="header">
+                            <div className="profile-pic">
+                                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile" />
+                            </div>
+                            <div className="profile-info">
+                                <h2>{userData.username}</h2>
+                                <p>.. posts &nbsp;&nbsp; .. followers &nbsp;&nbsp; .. following</p>
+                                <p>{userData.name}</p>
+                            </div>
                         </div>
-                        <div className="row">
-                            <button className="settings-button">Settings</button>
+
+                        <div className="tabs">
+                            <div>Posts</div>
                         </div>
-                    </div>
-                </div>
-                <div className="right-section">
-                    <h2>Posts</h2>
-                    <div className="posts-container">
-                        {/* No posts currently, so this area is empty */}
+
+                        <div className="content">
+                            {isEditing ? (
+                                <form onSubmit={handleSave} className="profile-edit-form">
+                                    <div className="profile-input">
+                                        <label htmlFor="username">Username:</label>
+                                        <input
+                                            id="username"
+                                            name="username"
+                                            value={newData.username || userData.username}
+                                            onChange={handleChange}
+                                            placeholder="Username"
+                                        />
+                                    </div>
+                                    <div className="profile-input">
+                                        <label htmlFor="name">Full Name:</label>
+                                        <input
+                                            id="name"
+                                            name="name"
+                                            value={newData.name || userData.name}
+                                            onChange={handleChange}
+                                            placeholder="Full Name"
+                                        />
+                                    </div>
+                                    <div className="profile-input">
+                                        <label htmlFor="bio">Bio:</label>
+                                        <textarea
+                                            id="bio"
+                                            name="bio"
+                                            value={newData.bio || userData.bio}
+                                            onChange={handleChange}
+                                            placeholder="Your bio"
+                                        ></textarea>
+                                    </div>
+                                    <button type="submit">Save Changes</button>
+                                </form>
+                            ) : (
+                                <div className="profile-info-details">
+                                    <p><strong>Username:</strong> {userData.username}</p>
+                                    <p><strong>Full Name:</strong> {userData.name}</p>
+                                    <p><strong>Email:</strong> {userData.email}</p>
+                                    <p><strong>Bio:</strong> {userData.bio}</p>
+                                </div>
+                            )}
+                        </div>
+
+                        <div className="content">
+                            <div className="default">
+                                <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Camera Icon" />
+                                <h3>Share Photos</h3>
+                                <p>When you share photos, they will appear on your profile.</p>
+                                <a href="#">Share your first photo</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </>
-    )
-}
 
-export default Profile
+            {/* Confirmation Modal */}
+            <ConfirmationModal
+                show={showModal}
+                onConfirm={handleConfirmDelete}
+                onCancel={handleCancelDelete}
+            />
+        </>
+    );
+};
+
+export default Profile;

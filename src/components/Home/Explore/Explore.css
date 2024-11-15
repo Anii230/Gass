@@ -1,0 +1,15 @@
+.exploreDiv{
+    background-color: #fff;
+    color: black;
+}
+
+.exploreContainer{
+    width: 100%;
+    display: flex;
+    padding: 2rem;
+}
+
+.exploreFeed{
+    flex: 5.5;
+    margin-left: 100px;
+}

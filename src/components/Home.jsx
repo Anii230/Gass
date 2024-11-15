@@ -141,7 +141,7 @@ const Home = () => {
                         <button>Learn more</button>
                     </div>
                 </div>
-                <div className="home-sec6"></div>
+                {/* <div className="home-sec6"></div> */}
             </div>
         </>
     )

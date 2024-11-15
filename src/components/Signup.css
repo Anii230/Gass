@@ -53,7 +53,7 @@ a:hover{
 }
 
 .left{
-    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0.5)), url(images/signup1.png);
+    /* background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1.8)), url(../assets/post/8.jpeg); */
     background-size: cover;
     /* position: relative; */
     background-position: center;
@@ -156,10 +156,10 @@ input-container.password{
 }
 
 @media screen and (min-width: 900px) {
-    body{
+    /* body{
         overflow-y: hidden;
         overflow-x: hidden;
-    }
+    } */
     .splt-scrn{
         flex-direction: row;
         height: 100vh;

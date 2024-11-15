@@ -1,27 +1,28 @@
-import axios from 'axios';
+import axios from 'axios'; // Make sure you have axios installed
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import "./Signup.css";
 
 const Signup = () => {
-
     const [inputs, setInputs] = useState({
-        username:"",
-        email:"",
-        password:"",
-        name:"",
-    })
+        username: "",
+        email: "",
+        password: "",
+        name: "",
+    });
 
-    const [err, setErr] = useState(null)
+    const [err, setErr] = useState(null);
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
-        setInputs(prev=>({...prev, [e.target.name]:e.target.value}));
-    }
+        setInputs(prev => ({ ...prev, [e.target.name]: e.target.value }));
+    };
 
-    const handleClick = async (e)=> {
+    const handleClick = async (e) => {
         e.preventDefault();
 
-        if (inputs.username.length <= 4) {
+        // Validation
+        if (inputs.username.length < 4) {
             setErr("Username should be more than 4 characters.");
             return;
         }
@@ -30,7 +31,7 @@ const Signup = () => {
             setErr("Please enter a valid email address.");
             return;
         }
-        if (inputs.password.length <= 5) {
+        if (inputs.password.length < 5) {
             setErr("Password must be more than 5 characters.");
             return;
         }
@@ -39,22 +40,36 @@ const Signup = () => {
             return;
         }
 
+        try {
+            // Make the API call to register the user in the database
+            const response = await axios.post("http://localhost:8800/server/auth/register", inputs);
 
-        try{
-            await axios.post("http://localhost:8800/server/auth/register", inputs)
-        }catch(err){
-            setErr(err.response.data)
+            if (response.status === 200) {
+                // If the registration is successful, save user data in localStorage
+                localStorage.setItem("user", JSON.stringify(inputs));
+
+                // Redirect to the 'NewHome' page
+                navigate('/NewHome');
+            }
+        } catch (error) {
+            if (error.response) {
+                setErr(error.response.data);  // Show error message if available
+            } else {
+                setErr("An unexpected error occurred.");
+            }
         }
-    }
-
-    console.log(err)
+    };
 
     return (
         <div className="splt-scrn">
             <div className="left">
-                <section className="txt">
-                    <h1>Seamless Journey one click away</h1>
-                    <p>"City of Dreams, Rides of Reality: Your Mumbai Cab Adventure Begins!"</p>
+            <section className="txt">
+                    <h2>Gather Amplify Share Socialize</h2>
+                    <p>
+                        Gather ideas, Amplify voices, and Share your story—where every moment
+                        finds its place, and socializing becomes a vibrant connection. Welcome to a
+                        community built for you.
+                    </p>
                 </section>
             </div>
 

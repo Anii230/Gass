@@ -1,0 +1,76 @@
+@import "../../../style.scss";
+
+.post {
+    @include themify($themes) {
+        -webkit-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        -moz-box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        box-shadow: 0px 0px 25px -10px rgba(0, 0, 0, 0.38);
+        border-radius: 20px;
+        background-color: themed("bg");
+        color: themed("textColor");
+
+        .container {
+            padding: 20px;
+
+            .user {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .userInfo {
+                    display: flex;
+                    gap: 20px;
+
+                    img {
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                        object-fit: contain;
+                    }
+
+                    .details {
+                        display: flex;
+                        flex-direction: column;
+
+                        .name {
+                            font-weight: 500;
+                        }
+
+                        .date {
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+
+            .content {
+                margin: 20px 0px;
+                overflow: hidden; // Ensure the content doesn't overflow
+
+                img {
+                    width: 100%;
+                    height: auto; // Ensure the image maintains its aspect ratio
+                    max-height: 500px; // Limit the height to avoid overflowing
+                    object-fit: cover;
+                    margin-top: 20px;
+                    display: block; // Ensure the image is treated as a block element
+                    border-radius: 10px; // Optional: round the corners of the image
+                }
+            }
+
+            .info {
+                display: flex;
+                align-items: center;
+                gap: 20px;
+
+                .item {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    cursor: pointer;
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

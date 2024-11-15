@@ -1,0 +1,10 @@
+/* Feed Container */
+.feed {
+    flex: 5.5;
+    margin-left: 100px; /* This ensures that there is space between the feed and the sidebar */
+}
+
+/* Feed Wrapper */
+.feedWrapper {
+    padding: 20px;
+}
