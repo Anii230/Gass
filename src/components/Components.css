@@ -450,6 +450,7 @@
 
 /* Content styling */
 .about-content h2 {
+    color: white;
     font-size: 2rem;
     margin-top: 30px;
     position: relative;
@@ -526,6 +527,7 @@
 
 /* Content styling */
 .privacy-content h2 {
+    color: white;
     font-size: 2rem;
     margin-top: 30px;
     position: relative;

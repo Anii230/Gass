@@ -1,4 +1,4 @@
-# Gass - A Social Media Platform
+# Gass - A Social Media Platform (Collage Project)
 
 Welcome to **Gass**, a social media platform designed to foster meaningful connections, enhance communication, and build communities. Gass is built with the goal of making socializing effortless and enjoyable for everyone. Built with React, Node.js, and MySQL, Gass aims to provide a seamless user experience with features like real-time messaging, profile customization, and content sharing.
 
