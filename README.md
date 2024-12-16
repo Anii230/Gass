@@ -22,7 +22,7 @@ To get started with Gass, follow these steps:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/gass.git
+   git clone https://github.com/Anii230/Gass.git
    ```
 2. **Navigate to the project directory**:
    ```bash
